@@ -1,0 +1,34 @@
+; This section is standard autorun, for use with burning CDs.
+[autorun]
+OPEN=Autorun.exe
+ICON=Autorun.exe,1
+
+; Everything below is specific to RF Autorun.
+[General]
+Title=My Software
+;Icon=autorun.ico
+HelpText=This is my software.|All help text is optional.
+;LaunchTitle=Attack!
+;ExitTitle=Retreat!
+
+[MenuItems]
+Item1=Execute Program
+Item2=Open Folder
+Item3=Open URL (IE)
+Item4=Open Text File
+
+[Execute Program]
+Exec=samples\someprogram\setup.exe
+;Icon=someprogram\someprogram.ico
+HelpText=A program can be executed, either with a relative path, or optionally an absolute path.
+
+[Open Folder]
+Exec=explorer samples\somefolder\
+HelpText=Everything in an item's section is optional, except Exec.  Valid attributes are: Exec, Icon, HelpText.
+
+[Open URL (IE)]
+Exec=explorer "http://www.google.com"
+HelpText=Launches Internet Explorer and navigates to Google.
+
+[Open Text File]
+Exec=notepad samples\somefolder\readme.txt
