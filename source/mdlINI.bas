@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+Attribute VB_Name = "mdINI"
  'API DECLARATIONS
 Declare Function GetPrivateProfileString Lib "kernel32" Alias _
                  "GetPrivateProfileStringA" (ByVal lpApplicationName _

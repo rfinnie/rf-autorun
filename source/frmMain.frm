@@ -88,7 +88,12 @@ Private Sub cmdLaunch_Click()
     
     mnuexec = sGetINI(App.Path + "\autorun.inf", lstItems.Text, "Exec", "?")
     If Not mnuexec = "?" Then
-        Shell mnuexec, vbNormalFocus
+        If InStr(mnuexec, "http://") = 1 Or InStr(mnuexec, "https://") = 1 Then
+            foo = mnuexec
+            Shell GetURLCommand(foo)
+        Else
+            Shell mnuexec, vbNormalFocus
+        End If
     End If
     
 End Sub

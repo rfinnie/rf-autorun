@@ -14,8 +14,9 @@ HelpText=This is my software.|All help text is optional.
 [MenuItems]
 Item1=Execute Program
 Item2=Open Folder
-Item3=Open URL (IE)
-Item4=Open Text File
+Item3=Open URL (Default Browser)
+Item4=Open URL (Internet Explorer)
+Item5=Open Text File
 
 [Execute Program]
 Exec=samples\someprogram\setup.exe
@@ -26,7 +27,11 @@ HelpText=A program can be executed, either with a relative path, or optionally a
 Exec=explorer samples\somefolder\
 HelpText=Everything in an item's section is optional, except Exec.  Valid attributes are: Exec, Icon, HelpText.
 
-[Open URL (IE)]
+[Open URL (Default Browser)]
+Exec=http://www.google.com
+HelpText=Launches the user's default browser and navigates to Google.
+
+[Open URL (Internet Explorer)]
 Exec=explorer "http://www.google.com"
 HelpText=Launches Internet Explorer and navigates to Google.
 
