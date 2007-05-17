@@ -1,5 +1,5 @@
-RF Autorun 1.3
-Copyright (C) 2006 Ryan Finnie
+RF Autorun 1.4
+Copyright (C) 2007 Ryan Finnie
 http://www.finnie.org/software/rf-autorun
 
 Redistribution and use in source and binary forms, with or without
@@ -30,3 +30,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Changelog:
 1.2 - Initial public release
 1.3 - Added URL handling
+1.4 - Fixed "|" to linefeed handling of welcome text
+      Added ShowDescription
+      Added ExecDocument

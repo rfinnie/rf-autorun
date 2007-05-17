@@ -92,7 +92,12 @@ Private Sub cmdLaunch_Click()
             foo = mnuexec
             Shell GetURLCommand(foo)
         Else
-            Shell mnuexec, vbNormalFocus
+            execdocument = sGetINI(App.Path + "\autorun.inf", lstItems.Text, "ExecDocument", "?")
+            If LCase(execdocument) = "true" Then
+                MyShellExec mnuexec
+            Else
+                Shell mnuexec, vbNormalFocus
+            End If
         End If
     End If
     
@@ -107,6 +112,11 @@ Private Sub Form_Load()
     txtDescription.Text = ""
     frmDescription.Caption = ""
     
+    buttonshowdescription = sGetINI(App.Path + "\autorun.inf", "General", "ShowDescription", "?")
+    If LCase(buttonshowdescription) = "false" Then
+        lstItems.Height = lstItems.Height + frmDescription.Height + 185
+        frmDescription.Visible = False
+    End If
     buttonlaunchtitle = sGetINI(App.Path + "\autorun.inf", "General", "LaunchTitle", "?")
     If Not buttonlaunchtitle = "?" Then
         cmdLaunch.Caption = buttonlaunchtitle
@@ -138,13 +148,14 @@ Private Sub Form_Load()
     autorunwelcometext = sGetINI(App.Path + "\autorun.inf", "General", "HelpText", "?")
     If Not autorunwelcometext = "?" Then
         frmDescription.Caption = frmMain.Caption
-        txtDescription.Text = autorunwelcometext
+        txtDescription.Text = Replace(autorunwelcometext, "|", vbCrLf, 1, Len(autorunwelcometext), vbTextCompare)
     End If
     
 End Sub
 
 
 Private Sub lstItems_Click()
+    On Error Resume Next
     cmdLaunch.Enabled = True
     frmDescription.Caption = lstItems.Text
     mnuhelptext = sGetINI(App.Path + "\autorun.inf", lstItems.Text, "HelpText", "?")

@@ -1,4 +1,4 @@
-Attribute VB_Name = "mdINI"
+Attribute VB_Name = "mdlINI"
  'API DECLARATIONS
 Declare Function GetPrivateProfileString Lib "kernel32" Alias _
                  "GetPrivateProfileStringA" (ByVal lpApplicationName _
