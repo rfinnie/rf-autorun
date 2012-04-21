@@ -173,3 +173,6 @@ Private Sub lstItems_Click()
 End Sub
 
 
+Private Sub lstItems_DblClick()
+    cmdLaunch_Click
+End Sub

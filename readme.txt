@@ -1,5 +1,5 @@
-RF Autorun 1.4
-Copyright (C) 2007 Ryan Finnie
+RF Autorun 1.5
+Copyright (C) 2012 Ryan Finnie
 http://www.finnie.org/software/rf-autorun
 
 Redistribution and use in source and binary forms, with or without
@@ -28,8 +28,16 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Changelog:
-1.2 - Initial public release
-1.3 - Added URL handling
-1.4 - Fixed "|" to linefeed handling of welcome text
-      Added ShowDescription
-      Added ExecDocument
+RF Autorun 1.2
+  - Initial public release
+RF Autorun 1.3
+  - Added URL handling
+RF Autorun 1.4
+  - Fixed "|" to linefeed handling of welcome text
+  - Added ShowDescription
+  - Added ExecDocument
+RF Autorun 1.5
+  - Browser registry lookup now uses HKCU instead of HKLM
+  - Browser registry lookup now uses HTTPS class for https:// URLs
+  - Added double-click capability to launch items
+  - Provided source for demo Hello World program

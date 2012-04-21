@@ -48,7 +48,11 @@ Private Sub SaveValue(hKey As Long, strPath As String, strvalue As String, strDa
 End Sub
 
 Function GetURLCommand(ByVal url As String)
-    lRetVal = RegOpenKeyEx(HKEY_LOCAL_MACHINE, "SOFTWARE\Classes\HTTP\Shell\Open\command", 0, KEY_QUERY_VALUE, hKey)
+    If InStr(mnuexec, "https://") = 1 Then
+        lRetVal = RegOpenKeyEx(HKEY_CURRENT_USER, "SOFTWARE\Classes\HTTPS\Shell\Open\command", 0, KEY_QUERY_VALUE, hKey)
+    Else
+        lRetVal = RegOpenKeyEx(HKEY_CURRENT_USER, "SOFTWARE\Classes\HTTP\Shell\Open\command", 0, KEY_QUERY_VALUE, hKey)
+    End If
     lRetVal = QueryValueEx(hKey, "", vValue)
     
     urlopener = vValue

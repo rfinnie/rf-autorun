@@ -15,10 +15,11 @@ HelpText=This is a sample configuration of RF Autorun.||Please see autorun.inf f
 [MenuItems]
 Item1=Execute Program
 Item2=Open Folder
-Item3=Open URL (Default Browser)
-Item4=Open URL (Internet Explorer)
-Item5=Open Text File (Notepad)
-Item6=Open Text File (Associated Program)
+Item3=Open URL
+Item4=Open URL (HTTPS)
+Item5=Open URL (Internet Explorer)
+Item6=Open Text File (Notepad)
+Item7=Open Text File (Associated Program)
 
 [Execute Program]
 Exec=samples\someprogram\setup.exe
@@ -29,13 +30,17 @@ HelpText=Executes a sample Hello World program.||Programs can be executed via a 
 Exec=explorer samples\somefolder\
 HelpText=Opens a sample folder.||This particular sample opens a relative path folder, but it could be an absolute path folder.
 
-[Open URL (Default Browser)]
-Exec=http://www.google.com
-HelpText=Launches the user's default browser and navigates to Google.||URLs passed directly will be opened in the user's default browser.
+[Open URL]
+Exec=http://www.finnie.org/software/rf-autorun/
+HelpText=Launches the user's default browser and navigates to a URL.||URLs passed directly will be opened in the user's default browser.
+
+[Open URL (HTTPS)]
+Exec=https://www.hampr.com/
+HelpText=Launches the user's default browser and navigates to an HTTPS URL.||URLs passed directly will be opened in the user's default browser.
 
 [Open URL (Internet Explorer)]
-Exec=explorer "http://www.google.com"
-HelpText=Launches Internet Explorer and navigates to Google.||To force Internet Explorer to open a URL, prefix the URL with "explorer".
+Exec=explorer "http://www.finnie.org/software/rf-autorun/"
+HelpText=Launches Internet Explorer and navigates to a URL.||To force Internet Explorer to open a URL, prefix the URL with "explorer".
 
 [Open Text File (Notepad)]
 Exec=notepad samples\somefolder\readme.txt
